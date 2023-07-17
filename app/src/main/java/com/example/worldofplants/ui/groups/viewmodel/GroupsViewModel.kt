@@ -3,6 +3,7 @@ package com.example.worldofplants.ui.groups.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
@@ -71,7 +72,7 @@ class GroupsViewModel(private val repository: GroupRepository) : ViewModel() {
     companion object {
         val Factory = viewModelFactory {
             initializer {
-                val app = this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as PlantReviewerApplication
+                val app = this[APPLICATION_KEY] as PlantReviewerApplication
                 GroupsViewModel(app.groupRepository)
             }
         }

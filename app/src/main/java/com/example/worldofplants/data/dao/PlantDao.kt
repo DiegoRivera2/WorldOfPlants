@@ -18,7 +18,7 @@ interface PlantDao {
     suspend fun insertPlant(plant: PlantModel)
 
     @Query("SELECT * FROM plant_table WHERE plantId = :plantId")
-    suspend fun getPlantWithAlarmById(plantId: Int): PlantWithAlarm?
+    suspend fun getPlantWithAlarmsById(plantId: Int): PlantWithAlarm?
 
 
 }

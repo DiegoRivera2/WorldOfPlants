@@ -3,7 +3,6 @@ package com.example.worldofplants.data.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.sql.Time
 
 @Entity(tableName = "alarm_table")
 data class AlarmModel(

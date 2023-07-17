@@ -83,22 +83,22 @@ class NewGroupsFragment : Fragment() {
     }
 
     private suspend fun getAlarmsAndLaunchSpinner(){
-        setAlarmSpinner(alarmsViewModel.getAllAlarms())
+        setAlarmsSpinner(alarmsViewModel.getAllAlarms())
     }
 
-    private fun setAlarmSpinner(alarmList: List<AlarmModel>) {
+    private fun setAlarmsSpinner(alarmList: List<AlarmModel>) {
         val alarmsAdapter = ArrayAdapter(requireContext(), R.layout.spinner_item, alarmList.map { it.hour })
         binding.alarmsSpinner.adapter = alarmsAdapter
 
         binding.alarmsSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                // Gets the selected element of the Spinner
+
                 val selectedAlarm = alarmList[position]
                 groupsViewModel.selectAlarm(selectedAlarm)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                // Handles the case where no element is selected
+
             }
         }
     }

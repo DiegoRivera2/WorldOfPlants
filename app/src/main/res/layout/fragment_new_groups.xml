@@ -2,8 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    >
     <data>
         <variable
             name="viewmodel"
@@ -58,9 +57,9 @@
             android:onClick="@{() -> viewmodel.createGroups()}"
             android:text="@string/create"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/actors_spinner"
-            app:layout_constraintStart_toStartOf="@+id/actors_spinner"
-            app:layout_constraintTop_toBottomOf="@+id/actors_spinner" />
+            app:layout_constraintEnd_toEndOf="@+id/alarms_spinner"
+            app:layout_constraintStart_toStartOf="@+id/alarms_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/alarms_spinner" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

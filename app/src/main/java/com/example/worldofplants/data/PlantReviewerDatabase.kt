@@ -11,7 +11,7 @@ import com.example.worldofplants.data.model.AlarmModel
 import com.example.worldofplants.data.model.GroupModel
 import com.example.worldofplants.data.model.PlantModel
 
-@Database(entities = [PlantModel::class, AlarmModel::class, GroupModel::class], version = 1)
+@Database(entities = [PlantModel::class, AlarmModel::class, GroupModel::class], version = 2)
 abstract class PlantReviewerDatabase : RoomDatabase(){
 
     abstract fun plantDao(): PlantDao
@@ -26,8 +26,8 @@ abstract class PlantReviewerDatabase : RoomDatabase(){
 
         fun newInstance(application: Application): PlantReviewerDatabase{
             return INSTANCE ?: synchronized(this){
-                val instance = Room.
-                        databaseBuilder(
+                val instance = Room
+                    .databaseBuilder(
                             application.applicationContext,
                             PlantReviewerDatabase::class.java,
                             "plant_reviewer"

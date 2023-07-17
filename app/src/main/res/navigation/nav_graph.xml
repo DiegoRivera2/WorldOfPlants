@@ -5,6 +5,12 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/myPlantsFragment">
 
+
+    <fragment
+        android:id="@id/plantFragment"
+        android:name="com.example.worldofplants.ui.plant.PlantFragment"
+        android:label="fragment_plant"
+        tools:layout="@layout/fragment_plant"/>
     <fragment
         android:id="@+id/myPlantsFragment"
         android:name="com.example.worldofplants.ui.plant.myplants.MyPlantsFragment"
@@ -26,17 +32,20 @@
     <fragment
         android:id="@+id/newPlantFragment"
         android:name="com.example.worldofplants.ui.plant.newplant.NewPlantFragment"
-        android:label="NewPlantFragment" />
+        android:label="NewPlantFragment"
+        tools:layout="@layout/fragment_new_plant"/>
     <fragment
         android:id="@+id/newAlarmFragment"
         android:name="com.example.worldofplants.ui.alarm.newalarm.NewAlarmFragment"
-        android:label="NewAlarmFragment" />
+        android:label="NewAlarmFragment"
+        tools:layout="@layout/fragment_new_alarm"/>
     <fragment
         android:id="@+id/plantFragment"
         android:name="com.example.worldofplants.ui.plant.PlantFragment"
-        android:label="PlantFragment" />
+        android:label="PlantFragment"/>
     <fragment
         android:id="@+id/newGroupsFragment"
         android:name="com.example.worldofplants.ui.groups.newgroup.NewGroupsFragment"
-        android:label="NewGroupsFragment" />
+        android:label="NewGroupsFragment"
+        tools:layout="@layout/fragment_new_groups"/>
 </navigation>

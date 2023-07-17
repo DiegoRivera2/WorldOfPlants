@@ -20,7 +20,7 @@ class PlantViewModel(private val repository: PlantRepository): ViewModel() {
 
     suspend fun getPlants() = repository.getPlants()
 
-    suspend fun getPlantWithAlarmById(plantId: Int) = repository.getPlantsWithAlarm(plantId)
+    suspend fun getPlantWithAlarmById(plantId: Int) = repository.getPlantsWithAlarms(plantId)
 
     private fun addPlants(plant: PlantModel){
         viewModelScope.launch {
@@ -78,7 +78,7 @@ class PlantViewModel(private val repository: PlantRepository): ViewModel() {
             }
         }
 
-        const val PLANT_CREATED = "Movie created"
+        const val PLANT_CREATED = "Plant created"
         const val WRONG_INFORMATION = "Wrong Information"
         const val INACTIVE = ""
     }

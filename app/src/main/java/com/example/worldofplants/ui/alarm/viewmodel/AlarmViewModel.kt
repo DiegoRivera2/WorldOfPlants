@@ -13,7 +13,7 @@ import com.example.worldofplants.ui.plant.viewmodel.PlantViewModel
 import com.example.worldofplants.ui.plant.viewmodel.PlantViewModel.Companion.INACTIVE
 import kotlinx.coroutines.launch
 
-class AlarmViewModel(private var repository: AlarmRepository) : ViewModel(){
+class AlarmViewModel(private val repository: AlarmRepository) : ViewModel(){
     var hour = MutableLiveData("")
     var status = MutableLiveData("")
 
