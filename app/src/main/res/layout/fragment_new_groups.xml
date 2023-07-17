@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.worldofplants.ui.groups.viewmodel.GroupsViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        tools:context=".ui.groups.newgroup.NewGroupsFragment">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/shapeableImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:src="@drawable/wop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/plants_spinner"
+            style="@style/CustomSpinnerStyle"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/plants_pinner"
+            android:minHeight="50dp"
+            app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
+            app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
+            app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />
+
+        <Spinner
+            android:id="@+id/alarms_spinner"
+            style="@style/CustomSpinnerStyle"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/alarms_spinner"
+            android:minHeight="50dp"
+            app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
+            app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
+            app:layout_constraintTop_toBottomOf="@+id/plants_spinner" />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/btn_color"
+            android:onClick="@{() -> viewmodel.createGroups()}"
+            android:text="@string/create"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/actors_spinner"
+            app:layout_constraintStart_toStartOf="@+id/actors_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/actors_spinner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
